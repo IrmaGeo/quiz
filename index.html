@@ -9,24 +9,51 @@
   <body>
     <div class="slideshow-container">
       <div class="mySlides">
-        <h1 class="">Collumbia boots camp quiz for java</h1>
-        <p class="">
+        <h1 >Quiz</h1>
+        <p class="inst">
           please read the instruction carefully. when you will be ready click
           "start" button to start quiz.
         </p>
-        <button class="start" onclick="generateQuiz()">start</button>
-      </div>
-      <a href="#" class="previous">&laquo; Previous</a>
-      <a href="#" class="next">Next &raquo;</a>
-      <div class="mySlides">
-        <button type="submit">submit</button>
+        <button class="start">
+          start
+        </button>
       </div>
 
       <div class="mySlides">
-        <label for="text">fill your name</label>
-        <input type="text" name="Name" id="" />
-        <button>result</button>
+        <h2 class="timer">Left Time</h2>
+        <h3 class="question"></h3>
+      
+        <button id="answer_1"></button>
+        <button id="answer_2"></button>
+        <button id="answer_3"></button>
+        <button id="answer_4"></button>
+
+      
+
+        <h4 class="checkResult"></h3>
+        <button class="next">next</button>
+        <button class="previous" >previous</button>
       </div>
+
+
+  <div class="mySlides">
+    <label for="text" class="textLable">Fill your name</label></br>
+    <input type="text" name="Name" id="UserName" />
+    <button class="result">result</button>
+    <label  class="score">kkkk</label></br>
+  </div>
+
+      <div class="mySlides">
+        <button type="submit" class="submit">submit</button>
+      </div>
+      <div class="mySlides">
+        <button type="goback" class="goback">goback</button>
+      </div>
+      <div class="mySlides">
+        <button type="clear" class="clear">clear</button>
+      </div>
+
+   
     </div>
     <!-- create start button -->
     <!-- answers container -->

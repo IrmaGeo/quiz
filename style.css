@@ -7,20 +7,19 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 8px;
-}
 
 a:hover {
   background-color: #ddd;
   color: black;
 }
 
+.submit {
+  display: none;
+}
 .previous {
   background-color: #f1f1f1;
   color: black;
+  display: none;
 }
 
 .next {
@@ -28,6 +27,7 @@ a:hover {
   color: white;
   position: absolute;
   right: 0;
+  display: none;
 }
 .previous,
 .next {
@@ -35,7 +35,48 @@ a:hover {
   position: absolute;
   bottom: 40%;
   width: auto;
-  margin-top: -30px;
+  margin-top: 30px;
   padding: 16px;
   user-select: none;
+}
+
+.answer,
+.question,
+.radio,
+.textLable,
+.result,
+#UserName,
+.timer,
+#result,
+#answer_1,
+#answer_2,
+#answer_3,
+#answer_4,
+.score,
+.clear,
+.goback {
+  display: none;
+}
+
+h4 {
+  font-size: 10px;
+  color: grey;
+}
+
+#answer_1,
+#answer_2,
+#answer_3,
+#answer_4 {
+  box-sizing: 30px;
+  padding: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+}
+.submit {
+  margin-top: 30px;
+}
+
+.result {
+  margin-top: 30px;
 }
