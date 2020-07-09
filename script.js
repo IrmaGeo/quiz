@@ -92,10 +92,10 @@ function pushQuestion() {
   answer3EL.style.display = "block";
   answer4EL.style.display = "block";
 
-  answer1EL.innerHTML = questions[i].a1;
-  answer2EL.innerHTML = questions[i].a2;
-  answer3EL.innerHTML = questions[i].a3;
-  answer4EL.innerHTML = questions[i].a4;
+  answer1EL.textContent = questions[i].a1;
+  answer2EL.textContent = questions[i].a2;
+  answer3EL.textContent = questions[i].a3;
+  answer4EL.textContent = questions[i].a4;
 }
 
 nextBtnEL.onclick = function () {
