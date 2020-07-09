@@ -1,6 +1,6 @@
 // DOM elements
-var nextBtnEL = document.querySelector(".next");
-var prevBtnEL = document.querySelector(".previous");
+var nextBtnEL = document.getElementById("next");
+var prevBtnEL = document.getElementById("previous");
 var submitBtnEL = document.querySelector(".submit");
 var timeEl = document.querySelector(".timer");
 var startEl = document.querySelector(".start");
@@ -13,8 +13,8 @@ var answer4EL = document.querySelector("#a4");
 var userEL = document.querySelector(".textLable");
 var nameEL = document.querySelector("#UserName");
 var scoreEL = document.querySelector(".score");
-var gobackEl = document.querySelector(".goback");
-var clearEL = document.querySelector(".clear");
+var gobackEl = document.getElementById("goback");
+var clearEL = document.getElementById("clear");
 var resultEL = document.querySelector(".result");
 var score = 0;
 
@@ -24,8 +24,6 @@ startEl.addEventListener("click", hideElements);
 
 function hideElements() {
   startEl.style.display = "none";
-  nextBtnEL.style.display = "block";
-  prevBtnEL.style.display = "block";
   instEL.style.display = "none";
   timeEl.style.display = "block";
   i = 0;
@@ -158,6 +156,8 @@ function goback() {
 }
 
 answer1EL.onclick = function () {
+  nextBtnEL.style.display = "block";
+  prevBtnEL.style.display = "block";
   var x = answer1EL;
   checkAnswer(x);
 };
@@ -173,16 +173,25 @@ function checkAnswer(x) {
   }
 }
 answer2EL.onclick = function () {
+  nextBtnEL.style.display = "block";
+  prevBtnEL.style.display = "block";
+  var x = answer1EL;
   var x = answer2EL;
   checkAnswer(x);
 };
 
 answer3EL.onclick = function () {
+  nextBtnEL.style.display = "block";
+  prevBtnEL.style.display = "block";
+  var x = answer1EL;
   var x = answer3EL;
   checkAnswer(x);
 };
 
 answer4EL.onclick = function () {
+  nextBtnEL.style.display = "block";
+  prevBtnEL.style.display = "block";
+  var x = answer1EL;
   var x = answer4EL;
   checkAnswer(x);
 };

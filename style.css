@@ -12,7 +12,7 @@ a:hover {
   color: black;
 }
 
-.previous {
+#previous {
   background-color: grey;
   color: white;
   display: none;
@@ -23,7 +23,7 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.next {
+#next {
   background-color: darkgreen;
   color: white;
   right: 0;
@@ -46,8 +46,8 @@ a:hover {
 #a3,
 #a4,
 .score,
-.clear,
-.goback,
+#clear,
+#goback,
 .submit {
   display: none;
 }
@@ -70,8 +70,8 @@ h4 {
   gap: 5px;
 }
 .submit,
-.clear,
-.goback {
+#clear,
+#goback {
   margin-top: 30px;
   border-style: groove;
   padding: 5px 20px 5px 20px;
@@ -105,4 +105,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.btn-grid {
+  display: grid;
+}
+
+.btn .go-btn .clr-btn .prev-btn .nxt-btn {
 }
