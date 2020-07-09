@@ -2,22 +2,21 @@
 var nextBtnEL = document.querySelector(".next");
 var prevBtnEL = document.querySelector(".previous");
 var submitBtnEL = document.querySelector(".submit");
-var resultBtnEL = document.querySelector(".result");
 var timeEl = document.querySelector(".timer");
-var checkResultEL = document.querySelector(".checkResult");
 var startEl = document.querySelector(".start");
 var instEL = document.querySelector(".inst");
 var questionEL = document.querySelector(".question");
-var answer1EL = document.querySelector("#answer_1");
-var answer2EL = document.querySelector("#answer_2");
-var answer3EL = document.querySelector("#answer_3");
-var answer4EL = document.querySelector("#answer_4");
+var answer1EL = document.querySelector("#a1");
+var answer2EL = document.querySelector("#a2");
+var answer3EL = document.querySelector("#a3");
+var answer4EL = document.querySelector("#a4");
 var userEL = document.querySelector(".textLable");
 var nameEL = document.querySelector("#UserName");
 var scoreEL = document.querySelector(".score");
 var gobackEl = document.querySelector(".goback");
 var clearEL = document.querySelector(".clear");
-var secondsLeft = 10;
+var resultEL = document.querySelector(".result");
+var score = 0;
 
 // show - hide elements
 startEl.onclick = function () {
@@ -30,8 +29,8 @@ function hideElements() {
   instEL.style.display = "none";
   timeEl.style.display = "block";
   i = 0;
-
-  setTime();
+  var secondsLeft = 10;
+  setTime(secondsLeft);
 
   pushQuestion(i);
 }
@@ -66,15 +65,14 @@ var questions = [
 ];
 
 //create timer function
-function setTime() {
-  var secondsLeft = 10;
+function setTime(secondsLeft) {
   timeEl.textContent = secondsLeft + " seconds left";
 
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left";
 
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
       clearInterval(timerInterval);
     }
   }, 1000);
@@ -135,10 +133,11 @@ function prevQuestion() {
 
 submitBtnEL.onclick = function () {
   calculateResult();
+  secondsLeft = 0;
 };
 
 function calculateResult() {
-  scoreEL.innerHTML = "Your score is----";
+  scoreEL.innerHTML = "Your score is" + " " + score;
   scoreEL.style.display = "block";
   gobackEl.style.display = "block";
   clearEL.style.display = "block";
@@ -157,3 +156,33 @@ function goback() {
   gobackEl.style.display = "none";
   clearEL.style.display = "none";
 }
+
+answer1EL.onclick = function () {
+  var x = answer1EL;
+  checkAnswer(x);
+};
+function checkAnswer(x) {
+  if (x.id === questions[i].correctAnswer) {
+    score = score + 1;
+    alert("correct");
+
+    console.log(score + " score");
+  } else {
+    alert("wrong!");
+    console.log(score);
+  }
+}
+answer2EL.onclick = function () {
+  var x = answer2EL;
+  checkAnswer(x);
+};
+
+answer3EL.onclick = function () {
+  var x = answer3EL;
+  checkAnswer(x);
+};
+
+answer4EL.onclick = function () {
+  var x = answer4EL;
+  checkAnswer(x);
+};

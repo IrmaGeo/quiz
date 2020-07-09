@@ -12,21 +12,28 @@ a:hover {
   color: black;
 }
 
-.submit {
-  display: none;
-}
 .previous {
-  background-color: #f1f1f1;
-  color: black;
+  background-color: grey;
+  color: white;
   display: none;
+  border-style: groove;
+  padding: 5px 20px 5px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .next {
-  background-color: #4caf50;
+  background-color: darkgreen;
   color: white;
   position: absolute;
   right: 0;
   display: none;
+  border-style: groove;
+  padding: 5px 20px 5px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .previous,
 .next {
@@ -47,13 +54,14 @@ a:hover {
 #UserName,
 .timer,
 #result,
-#answer_1,
-#answer_2,
-#answer_3,
-#answer_4,
+#a1,
+#a2,
+#a3,
+#a4,
 .score,
 .clear,
-.goback {
+.goback,
+.submit {
   display: none;
 }
 
@@ -62,18 +70,27 @@ h4 {
   color: grey;
 }
 
-#answer_1,
-#answer_2,
-#answer_3,
-#answer_4 {
-  box-sizing: 30px;
-  padding: 3px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: 20px;
+#a1,
+#a2,
+#a3,
+#a4 {
+  border-style: groove;
+  padding: 5px 20px 5px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: violet;
 }
-.submit {
+.submit,
+.clear,
+.goback {
   margin-top: 30px;
+  border-style: groove;
+  padding: 5px 20px 5px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: teal;
 }
 
 .result {
