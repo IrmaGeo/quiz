@@ -26,24 +26,11 @@ a:hover {
 .next {
   background-color: darkgreen;
   color: white;
-  position: absolute;
   right: 0;
   display: none;
   border-style: groove;
   padding: 5px 20px 5px 20px;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.previous,
-.next {
-  cursor: pointer;
-  position: absolute;
-  bottom: 40%;
-  width: auto;
-  margin-top: 30px;
-  padding: 16px;
-  user-select: none;
 }
 
 .answer,
@@ -95,4 +82,20 @@ h4 {
 
 .result {
   margin-top: 30px;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: thistle;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
 }
