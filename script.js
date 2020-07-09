@@ -19,9 +19,9 @@ var resultEL = document.querySelector(".result");
 var score = 0;
 
 // show - hide elements
-startEl.onclick = function () {
-  hideElements();
-};
+
+startEl.addEventListener("click", hideElements);
+
 function hideElements() {
   startEl.style.display = "none";
   nextBtnEL.style.display = "block";

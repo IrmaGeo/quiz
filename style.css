@@ -67,6 +67,7 @@ h4 {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: violet;
+  gap: 5px;
 }
 .submit,
 .clear,
@@ -98,4 +99,10 @@ body {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
