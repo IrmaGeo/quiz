@@ -55,7 +55,11 @@ h2 {
   color: darkblue;
   font-style: italic;
 }
-
+h4 {
+  border-top: 1px solid;
+  font-size: 10px;
+  font-style: italic;
+}
 /* .controls {
   display: flex;
   justify-content: center;

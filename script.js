@@ -6,26 +6,34 @@ var nextbtnEl = document.getElementById("next");
 var submitEl = document.getElementById("submitQuiz");
 var prevbtnEl = document.getElementById("previous");
 var timeEl = document.querySelector(".timer");
-var correctAnswers = [1, 2, 3];
+var resultEl = document.querySelector(".textresult");
 var secondsLeft = 10;
+var ansBtnEl = document.getElementById("test");
+var score = 0;
 
 // start quiz
 startBtnEl.addEventListener("click", startQuiz);
+
+// show start button, timer turn on and show first question
 function startQuiz() {
+  score = 0;
   scoredivEl.classList.add("hide");
   submitEl.classList.add("hide");
   setTime(secondsLeft);
   i = 0;
-  // timer();
   showNextQuestion(i);
   var startQuizEl = document.getElementById("startQuiz").classList.add("hide");
   startBtnEl.classList.add("hide");
   nextQuestionEl.classList.remove("hide");
 }
 
+// show each question and answers from questions object.
+
 function showNextQuestion() {
+  resultEl.textContent = "";
   resetBtn();
   if (i <= -1) {
+    // if a customer clicks a lot previusle button, she/he always will see first question
     i = 0;
   }
   if (i <= questions.length - 1) {
@@ -35,45 +43,39 @@ function showNextQuestion() {
       button.textContent = answers.text;
       answerEl.appendChild(button);
       if (answers.correct) {
-        // create correct answers array
+        button.addEventListener("click", checkAnswer); // count score only for correct answer
       }
-      button.addEventListener("onclick", correctAnswer);
     });
-  } else {
-    finishQuiz();
-  }
+  } else finishQuiz();
 }
 
-function correctAnswer(e) {
-  // checked if this button is in correct answers array
+// create check answer function
+function checkAnswer() {
+  score++;
+  resultEl.textContent = "correct!";
 }
 
-function setStatusClass(element, correct) {}
-
+//show next question when click next button
 nextbtnEl.addEventListener("click", nextQuiestion);
 function nextQuiestion() {
   i++;
   resetBtn();
   showNextQuestion(i);
 }
-function resetBtn() {
-  while (answerEl.firstChild) {
-    answerEl.removeChild(answerEl.firstChild);
-  }
-}
+// show prev question
 prevbtnEl.addEventListener("click", prevQuiestion);
 function prevQuiestion() {
   i--;
   resetBtn();
   showNextQuestion(i);
 }
+
+// for every new question remove the button and then create again
 function resetBtn() {
   while (answerEl.firstChild) {
     answerEl.removeChild(answerEl.firstChild);
   }
 }
-
-// start TimeRanges======
 
 function finishQuiz() {
   secondsLeft = 0;
@@ -87,43 +89,29 @@ submitBtnEl.addEventListener("click", submitQuiz);
 
 var scoredivEl = document.getElementById("scoreQuiz");
 
-console.log(scoredivEl);
-
 var scoreEl = document.querySelector(".score");
 
 function submitQuiz() {
   secondsLeft = 0;
   submitEl.classList.add("hide");
-  scoreEl.textContent = "Your score is" + " " + correctAnswers.length;
-  console.log(scoredivEl);
+  scoreEl.textContent = "Your score is" + " " + score;
   scoredivEl.classList.remove("hide");
 }
-// // click next question======
-// push next question
-// hide start Element
-
-// // click answers=======
-// check answers and push/remove/update answers string
 
 function setTime(secondsLeft) {
-  var secondsLeft = 10;
+  secondsLeft = 10;
   timeEl.textContent = secondsLeft;
 
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft;
 
-    if (secondsLeft <= 0 {
+    if (secondsLeft <= 0) {
       clearInterval(timerInterval);
       finishQuiz();
     }
   }, 1000);
 }
-
-// // submit--> calculate======
-// calculate correct answers
-// // clear
-// clear answers string
 
 // goback=======
 var goBackBtnEl = document
