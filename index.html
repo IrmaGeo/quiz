@@ -1,87 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" class="style" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css" class="style" />
+</head>
 
 <body>
- 
-  <div class="container">
-          <div>
-          <h1>Quiz</h1>
-          <h2 class="divTime">Timer:<span class="timer"></span></h2>
-        </div>
-           
-            <div class=""><p class="inst">
-              please read the instruction carefully. when you will be ready click
-              "start" button to start quiz.
-            </p></div>
-            <div><button class="start">
-              start
-            </button></div>
-      <div class="">
-        <h3 class="question"></h3>
-      </div>
-      <div class="btn-grid">
-        <button id="a1"></button>
-        <button id="a2"></button>
-        <button id="a3"></button>
-        <button id="a4"></button>
-      </div>
-      <div><h5 class="textresult"></h5></div>
-        <div>
-        
-          <label for="text" class="textLable">Fill your name</label></br>
-          <input type="text" name="Name" id="UserName" />
-          <button type="submit" class="submit">submit</button>
-          <div>
-           
-            <div class=""><label class="score">kkkk</label></br></div>
-          
-            <div class="controls">
-              
-              <button id="goback" class="go-btn btn">goback</button>
-              <button id="clear"class="clr-btn btn">clear</button>
-              <button id="previous"class="prev-btn btn">previous</button>
-              <button id="next"class="nxt-btn btn">next</button>
-              <h4 class="result"></h4>
-            </div>
-      
-     
-       
-     
-      
-     
-       
-     
-      
 
+<div class="container">
+  <div>
+    <header>Quiz</header>
+  </div>
+
+  <div id="startQuiz">
+    <div>
+      <p>
+        please read the instruction carefully. when you will be ready click "start" button to start quiz.
+      </p>
+    </div>
+
+    <div><button id="startBtn">start</button></div>
+  </div>
+                   
+  <div id="nextQuestion" class="hide">
+    <h2 class="divTime">Timer:<span class="timer"></span></h2>
+    <div>
+      <h2 class="question"></h2>
+    </div>
+    <div id="answersBtn" class="btn-grid">
+      <h3 class="result"></h3>
+    </div>
+    <!-- <div>
+      <h4 class="textresult"></h4>
+    </div> -->
+      <div>
+        <button id="previous">previous</button>
+        <button id="next">next</button>
+      </div>
+  </div>
+      
+  <div id="submitQuiz" class="hide">
+    <label for="text" class="textLable">Fill your name</label></br>
+    <input type="text" name="Name" id="UserName" />
+    <button class="submit">submit</button>
+  </div>
    
+  <div id="scoreQuiz" class="hide">
+    <label class="score"></label></br>
+    <button id="goback">GoBack</button>
+    <button id="clear">Clear</button>
+  </div>
 
-     
+</div>
 
+  <script src="script.js"></script>
 
-
-        </div>
-      
-     
-
-    
-  
-
-  
- 
-    <!-- create start button -->
-    <!-- answers container -->
-    <!-- create timer -->
-    <!-- create questions -->
-    <!-- next button, prev button and submit-->
-    <!-- create fields for users initials-->
-    <!-- create result button -->
-
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>

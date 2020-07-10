@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -15,94 +9,58 @@ body {
   background-color: black;
 }
 
-.start {
-  background-color: green;
-  color: white;
-  border-style: groove;
-  padding: 5px 20px 5px 20px;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-a:hover {
-  background-color: #ddd;
-  color: white;
+.nextQuestion {
+  display: hide;
 }
 
-#previous {
-  background-color: green;
-  color: white;
-  display: none;
-  border: 1px solid;
-  padding: 5px 20px 5px 20px;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#next {
-  background-color: green;
-  color: white;
-  right: 0;
-  display: none;
-  border: 1px solid;
-  padding: 5px 20px 5px 20px;
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-.answer,
-.question,
-.radio,
-.textLable,
-.result,
-#UserName,
-.timer,
-#result,
-#a1,
-#a2,
-#a3,
-#a4,
-.score,
-#clear,
-#goback,
-.submit,
-h2 {
+.hide {
   display: none;
 }
-
-h4 {
-  font-size: 10px;
-  color: grey;
-}
-
-#a1,
-#a2,
-#a3,
-#a4 {
-  border-style: groove;
-  padding: 5px 20px 5px 20px;
-  font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: rgb(86, 164, 248);
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   gap: 5px;
+  margin-bottom: 20px;
 }
+
+#startBtn,
+#previous,
+#next,
 .submit,
-#clear,
-#goback {
+#goback,
+#clear {
+  background-color: green;
+  color: white;
   border-style: groove;
   padding: 5px 20px 5px 20px;
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  background-color: green;
+  margin-bottom: 10px;
 }
 
-.result {
-  margin-top: 30px;
+span {
+  color: red;
 }
+h1 {
+  text-align: right;
+  color: blue;
+  font-size: 15px;
+}
+header {
+  color: darkslateblue;
+  font-size: 30px;
+}
+h2 {
+  font-size: 30px;
+  color: darkblue;
+  font-style: italic;
+}
+
+/* .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 .container {
   width: 800px;
@@ -111,35 +69,4 @@ h4 {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 5px;
-  margin-bottom: 20px;
-}
-.textresult {
-  border-top: 1px solid;
-  font-style: italic;
-  display: none;
-}
-span {
-  color: red;
-}
-h2 {
-  text-align: right;
-  color: blue;
-  font-size: 15px;
-}
-h1 {
-  color: darkslateblue;
-}
-h3 {
-  font-size: 30px;
 }
