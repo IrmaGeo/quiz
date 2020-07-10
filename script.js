@@ -17,7 +17,9 @@ var gobackEl = document.getElementById("goback");
 var clearEL = document.getElementById("clear");
 var resultEL = document.querySelector(".result");
 var score = 0;
-
+var textresultEl = document.querySelector(".textresult");
+var divTimeEl = document.querySelector(".divTime");
+console.log(divTimeEl);
 // show - hide elements
 
 startEl.addEventListener("click", hideElements);
@@ -26,6 +28,7 @@ function hideElements() {
   startEl.style.display = "none";
   instEL.style.display = "none";
   timeEl.style.display = "block";
+  divTimeEl.style.display = "block";
   i = 0;
   var secondsLeft = 10;
   setTime(secondsLeft);
@@ -64,11 +67,11 @@ var questions = [
 
 //create timer function
 function setTime(secondsLeft) {
-  timeEl.textContent = secondsLeft + " seconds left";
+  timeEl.textContent = secondsLeft;
 
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left";
+    timeEl.textContent = secondsLeft;
 
     if (secondsLeft <= 0) {
       clearInterval(timerInterval);
@@ -89,7 +92,8 @@ function pushQuestion() {
   answer2EL.style.display = "block";
   answer3EL.style.display = "block";
   answer4EL.style.display = "block";
-
+  nextBtnEL.style.display = "block";
+  prevBtnEL.style.display = "block";
   answer1EL.textContent = questions[i].a1;
   answer2EL.textContent = questions[i].a2;
   answer3EL.textContent = questions[i].a3;
@@ -100,6 +104,7 @@ nextBtnEL.onclick = function () {
   nextquestion();
 };
 function nextquestion() {
+  textresultEl.textContent = "";
   if (i < questions.length - 1) {
     i++;
     pushQuestion(i);
@@ -116,6 +121,7 @@ function nextquestion() {
     userEL.style.display = "block";
     nameEL.style.display = "block";
     submitBtnEL.style.display = "block";
+    textresultEl.style.display = "none";
   }
 }
 
@@ -123,6 +129,7 @@ prevBtnEL.onclick = function () {
   prevQuestion();
 };
 function prevQuestion() {
+  textresultEl.textContent = "";
   if (i > 0) {
     i--;
     pushQuestion(i);
@@ -142,6 +149,7 @@ function calculateResult() {
   startEl.style.display = "none";
   userEL.style.display = "none";
   nameEL.style.display = "none";
+  textresultEl.style.display = "none";
   submitBtnEL.style.display = "none";
   nameEL.innerHTML = "";
 }
@@ -164,12 +172,14 @@ answer1EL.onclick = function () {
 function checkAnswer(x) {
   if (x.id === questions[i].correctAnswer) {
     score = score + 1;
-    alert("correct");
+    textresultEl.textContent = "correct!";
+    textresultEl.style.display = "block";
 
     console.log(score + " score");
   } else {
-    alert("wrong!");
+    textresultEl.textContent = "wrong!";
     console.log(score);
+    textresultEl.style.display = "block";
   }
 }
 answer2EL.onclick = function () {

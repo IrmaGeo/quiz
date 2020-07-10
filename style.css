@@ -1,5 +1,22 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
 .start {
-  background-color: darkgreen;
+  background-color: green;
   color: white;
   border-style: groove;
   padding: 5px 20px 5px 20px;
@@ -9,14 +26,14 @@
 }
 a:hover {
   background-color: #ddd;
-  color: black;
+  color: white;
 }
 
 #previous {
-  background-color: grey;
+  background-color: green;
   color: white;
   display: none;
-  border-style: groove;
+  border: 1px solid;
   padding: 5px 20px 5px 20px;
   font-size: 20px;
   margin-top: 10px;
@@ -24,13 +41,14 @@ a:hover {
 }
 
 #next {
-  background-color: darkgreen;
+  background-color: green;
   color: white;
   right: 0;
   display: none;
-  border-style: groove;
+  border: 1px solid;
   padding: 5px 20px 5px 20px;
   font-size: 20px;
+  margin-left: 10px;
 }
 
 .answer,
@@ -48,7 +66,8 @@ a:hover {
 .score,
 #clear,
 #goback,
-.submit {
+.submit,
+h2 {
   display: none;
 }
 
@@ -66,36 +85,29 @@ h4 {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: violet;
+  background-color: rgb(86, 164, 248);
   gap: 5px;
 }
 .submit,
 #clear,
 #goback {
-  margin-top: 30px;
   border-style: groove;
   padding: 5px 20px 5px 20px;
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: teal;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-color: green;
 }
 
 .result {
   margin-top: 30px;
 }
 
-body {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
 .container {
   width: 800px;
   max-width: 80%;
-  background-color: thistle;
+  background-color: white;
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
@@ -108,7 +120,26 @@ body {
 }
 .btn-grid {
   display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 5px;
+  margin-bottom: 20px;
 }
-
-.btn .go-btn .clr-btn .prev-btn .nxt-btn {
+.textresult {
+  border-top: 1px solid;
+  font-style: italic;
+  display: none;
+}
+span {
+  color: red;
+}
+h2 {
+  text-align: right;
+  color: blue;
+  font-size: 15px;
+}
+h1 {
+  color: darkslateblue;
+}
+h3 {
+  font-size: 30px;
 }
