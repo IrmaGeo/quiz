@@ -1,7 +1,7 @@
 next release:
 
 1. when the quiz finish before time will run out, terminate setTime function;
-2. check and calculate answers;
+2. If the user clicks the same question several times, the score will be corrected.
 
 
 
