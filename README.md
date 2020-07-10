@@ -1,9 +1,10 @@
 next release:
 
-1. complete HTML  and CSS file
-2. if user click more than once, will not change answer
-3. if left time is 0, quiz over even all of the questions are shown or not.
-4. I used hard code in some places, I'll try to change them.
+1. when the quiz finish before time will run out, terminate setTime function;
+2. check and calculate answers;
+
+
+
 
 # 04 Web APIs: Code Quiz
 
